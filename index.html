@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+    rel="stylesheet">
+  <title>Store-hafid</title>
+  <style type="text/tailwindcss">
+    body{
+        @apply bg-white text-gray-800 ;
+    }
+    header{
+        @apply flex items-center justify-between p-6 bg-black ;
+    }
+    .img-logo{
+        @apply w-20 h-20 rounded-full object-cover ring-2 ring-white shadow-md bg-white p-1 cursor-pointer
+    }
+    .nav{
+        @apply hidden md:flex gap-8
+    }
+    .a{
+        @apply text-white font-bold uppercase px-3 py-1 rounded hover:text-cyan-400 hover:bg-gray-800 transition
+    }
+    button{
+        @apply md:hidden text-white focus:outline-none hover:cursor-pointer
+    }
+    .mobile-a{
+        @apply font-bold uppercase px-3 py-1 rounded hover:text-cyan-400 hover:bg-gray-800 transition
+    }
+    .div-section{
+        @apply inline-block bg-white shadow-md p-4 rounded border m-[28px] ;
+    }
+  </style>
+</head>
+
+<body class="body">
+
+  <header class="header">
+    <!-- Logo -->
+    <a href="#" onclick="location.reload()" class="block">
+      <img src="./images/image.png" alt="logo"
+        class="img-logo">
+    </a>
+
+    <!-- Desktop Nav (≥768px) -->
+    <nav class="nav">
+      <a href="#" class="a">HOME</a>
+      <a href="#" class="a">ABOUT</a>
+      <a href="#" class="a">CONTACT</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="mobile-btn" class="button">
+      <!-- Hamburger icon -->
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile Nav (<768px) -->
+  <nav id="mobile-nav" class="hidden flex-col bg-black text-white p-4 md:hidden gap-4">
+    <a href="#" class="mobile-a">HOME</a>
+    <a href="#" class="mobile-a">ABOUT</a>
+    <a href="#" class="mobile-a">CONTACT</a>
+  </nav>
+
+  <main>
+    <!-- section 1 -->
+    <section>
+        <div class="contain">
+        
+            <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+        <div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div><div class="div-section">
+            <img src="./images/image copy.png" alt="parfum-1" class="w-[120px] h-[130px]">
+            <div class="">
+                <h2 class="pt-[20px]">Parfum</h2>
+                <p class="max-w-[256px] pt-[20px]">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="/main.html"
+     class="inline-block bg-cyan-400 text-black font-bold mt-[20px] px-4 py-2 rounded hover:bg-cyan-500 transition">
+    Order Now
+  </a>
+            </div>
+            
+        </div>
+
+        </div>
+    </section>
+  </main>
+
+ 
+  <script src="main.js"></script>
+
+</body>
+
+</html>
