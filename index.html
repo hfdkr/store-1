@@ -53,13 +53,13 @@
              @apply font-fraunces text-dark-blue text-[20px];
         }
     body{
-        @apply bg-white text-gray-800 ;
+        @apply bg-abled text-gray-800 ;
     }
     header{
-        @apply flex items-center justify-between p-6 bg-black ;
+        @apply flex items-center justify-between p-6 bg-black  ;
     }
     .img-logo{
-        @apply w-20 h-20 rounded-full object-cover ring-2 ring-white shadow-md bg-white p-1 cursor-pointer
+        @apply w-20 h-20 rounded-full object-cover ring-2 ring-white shadow-md bg-white p-1 cursor-pointer hover:bg-cyan ;
     }
     .nav{
         @apply hidden md:flex gap-8
@@ -79,12 +79,18 @@
     .video{
         @apply border-3 border-cyan shadow-cyan w-full h-80 object-cover rounded shadow-lg hover:shadow-light-cream border-2 hover:w-full hover:h-90
     }
+    .section-2{
+        @apply container mx-auto px-4 bg-red-50 my-[124px]
+    }
+    .div-scroll{
+        @apply min-w-[200px] bg-pale-orange p-4 rounded shadow hover:border hover:bg-cyan;
+    }
   </style>
 </head>
 
 <body class="body">
 
-    <header class="header">
+    <header id="home" class="header">
         <!-- Logo -->
         <a href="#" onclick="location.reload()" class="block">
             <img src="./images/image.png" alt="logo" class="img-logo">
@@ -110,9 +116,9 @@
 
     <!-- Mobile Nav (<768px) -->
     <nav id="mobile-nav" class="hidden flex-col bg-black text-white p-4 md:hidden gap-4">
-        <a href="#" class="mobile-a">HOME</a>
-        <a href="#" class="mobile-a">ABOUT</a>
-        <a href="#" class="mobile-a">CONTACT</a>
+        <a href="#home" class="mobile-a">HOME</a>
+        <a href="#about" class="mobile-a">ABOUT</a>
+        <a href="#contact" class="mobile-a">CONTACT</a>
     </nav>
 
     <main>
@@ -130,12 +136,68 @@
 
   </div>
 </section>
+<section>
+    <div class="overflow-x-auto py-4">
+  <div class="flex space-x-4">
+    <!-- Card 1 -->
+    <div class="div-scroll">
+       <a href="#card-4"><img src="./images/1-million.png"></a>
+    </div>
+    <!-- card 2 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 3 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 4 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card  5 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 6 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+     <!-- card 7 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 8 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 9 -->
+    <div class="div-scroll">
+       <a href="card-1"><img src="./images/1-million.png"></a>
+    </div>
+    <!-- card 10 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 11 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+    <!-- card 12 -->
+    <div class="div-scroll">
+       <img src="./images/1-million.png">
+    </div>
+  </div>
+</div>
+
+</section>
 
         <!-- section 2 -->
-        <section class="container ml-[100px] pl-[100px] bg-red-50">
-            <div class="">
-                <div class="div-section">
-                    <img src="./images/strong-with-you.png" alt="parfum-1" class="ml-[18%] w-[200px] h-[200px]">
+        <section class="section-2">
+            <div id="about">
+                <!-- card-1 -->
+                <div class="div-section" id="card-1">
+                    <img src="./images/strong-with-you.png" alt="parfum-1" class="hover:shadow-black ml-[18%] w-[200px] h-[200px]">
                     <div class="text-center items-center">
                         <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
                         <p class="p max-w-[256px] pt-[20px]">Prix <br>950 dh</p>
@@ -200,7 +262,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="div-section">
+                <div id="card-4" class="div-section">
                     <img src="./images/strong-with-you.png" alt="parfum-1" class="ml-[18%] w-[200px] h-[200px]">
                     <div class="text-center items-center">
                         <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
