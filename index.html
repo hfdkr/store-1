@@ -79,12 +79,20 @@
     .video{
         @apply border-3 border-cyan shadow-cyan w-full h-80 object-cover rounded shadow-lg hover:shadow-light-cream border-2 hover:w-full hover:h-90
     }
-    .section-2{
-        @apply container mx-auto px-4 bg-red-50 my-[124px]
+    .section-3{
+        @apply container text-center items-center mx-auto px-4 bg-red-50 my-[124px]
     }
     .div-scroll{
-        @apply min-w-[200px] bg-pale-orange p-4 rounded shadow hover:border hover:bg-cyan;
+        @apply min-w-[200px] bg-white p-4 rounded shadow hover:border hover:bg-cyan;
     }
+    @keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* adjust -50% depending on number of cards */
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
   </style>
 </head>
 
@@ -98,8 +106,8 @@
 
         <!-- Desktop Nav (≥768px) -->
         <nav class="nav">
-            <a href="#" class="a">HOME</a>
-            <a href="#" class="a">ABOUT</a>
+            <a href="#home" class="a">HOME</a>
+            <a href="#about" class="a">ABOUT</a>
             <a href="#" class="a">CONTACT</a>
         </nav>
 
@@ -137,31 +145,31 @@
   </div>
 </section>
 <section>
-    <div class="overflow-x-auto py-4">
-  <div class="flex space-x-4">
+    <div class="overflow-hidden relative w-full">
+  <div class="flex animate-scroll space-x-4">
     <!-- Card 1 -->
     <div class="div-scroll">
        <a href="#card-4"><img src="./images/1-million.png"></a>
     </div>
     <!-- card 2 -->
     <div class="div-scroll">
-       <img src="./images/1-million.png">
+       <img src="./images/strong-with-you.png">
     </div>
     <!-- card 3 -->
     <div class="div-scroll">
-       <img src="./images/1-million.png">
+       <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted  class="video">
     </div>
     <!-- card 4 -->
     <div class="div-scroll">
-       <img src="./images/1-million.png">
+       <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted  class="video">
     </div>
     <!-- card  5 -->
     <div class="div-scroll">
-       <img src="./images/1-million.png">
+       <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted  class="video">
     </div>
     <!-- card 6 -->
     <div class="div-scroll">
-       <img src="./images/1-million.png">
+       <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop muted  class="video">
     </div>
      <!-- card 7 -->
     <div class="div-scroll">
@@ -192,8 +200,8 @@
 
 </section>
 
-        <!-- section 2 -->
-        <section class="section-2">
+        <!-- section 3 -->
+        <section class="section-3">
             <div id="about">
                 <!-- card-1 -->
                 <div class="div-section" id="card-1">
