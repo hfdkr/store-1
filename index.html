@@ -93,6 +93,12 @@
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+footer{
+    @apply  flex items-center justify-between p-6 bg-black ;
+}
+.div-links{
+    @apply flex gap-7
+}
   </style>
 </head>
 
@@ -338,7 +344,25 @@
             </div>
         </section>
     </main>
+   <footer class="footer">
+      <!-- Logo -->
+        <a href="#" onclick="location.reload()" class="block">
+            <img src="./images/image.png" alt="logo" class="img-logo">
+        </a>
 
+        <!-- Desktop Nav (≥768px) -->
+        <div class="div-links">
+            <a href="#" class="a">
+                <img src="" alt="facebook">
+            </a>
+            <a href="#" class="a">
+                <img src="" alt="instagrame">
+            </a>
+            <a href="#" class="a">
+                <img src="" alt="whatssap">
+            </a>
+        </div>
+   </footer>
 
     <script src="main.js"></script>
 
