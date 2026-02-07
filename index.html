@@ -90,15 +90,18 @@
   100% { transform: translateX(-50%); } /* adjust -50% depending on number of cards */
 }
 
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-footer{
+  .animate-scroll {
+     animation: scroll 20s linear infinite;
+     }
+   footer{
     @apply  flex items-center justify-between p-6 bg-black ;
-}
-.div-links{
-    @apply flex gap-7
-}
+     }
+   .div-links{
+      @apply flex gap-7
+      }
+    .img-social{
+        @apply w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-md bg-white p-1 cursor-pointer hover:bg-cyan ;
+    }
   </style>
 </head>
 
@@ -137,81 +140,88 @@ footer{
 
     <main>
         <!-- section 1 -->
-    <section class="p-6 bg-gray-100">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <!-- Video 1 -->
-    <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted class="video"></video>
-    <!-- Video 2 -->
-    <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted class="video"></video>
-    <!-- Video 3 -->
-    <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop muted class="video"></video>
-    <!-- Video 4 -->
-    <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted class="video"></video>
+        <section class="p-6 bg-gray-100">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Video 1 -->
+                <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted
+                    class="video"></video>
+                <!-- Video 2 -->
+                <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted
+                    class="video"></video>
+                <!-- Video 3 -->
+                <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop
+                    muted class="video"></video>
+                <!-- Video 4 -->
+                <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted class="video"></video>
 
-  </div>
-</section>
-<section>
-    <div class="overflow-hidden relative w-full">
-  <div class="flex animate-scroll space-x-4">
-    <!-- Card 1 -->
-    <div class="div-scroll">
-       <a href="#card-4"><img src="./images/1-million.png"></a>
-    </div>
-    <!-- card 2 -->
-    <div class="div-scroll">
-       <img src="./images/strong-with-you.png">
-    </div>
-    <!-- card 3 -->
-    <div class="div-scroll">
-       <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted  class="video">
-    </div>
-    <!-- card 4 -->
-    <div class="div-scroll">
-       <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted  class="video">
-    </div>
-    <!-- card  5 -->
-    <div class="div-scroll">
-       <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted  class="video">
-    </div>
-    <!-- card 6 -->
-    <div class="div-scroll">
-       <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop muted  class="video">
-    </div>
-     <!-- card 7 -->
-    <div class="div-scroll">
-       <img src="./images/1-million.png">
-    </div>
-    <!-- card 8 -->
-    <div class="div-scroll">
-       <img src="./images/1-million.png">
-    </div>
-    <!-- card 9 -->
-    <div class="div-scroll">
-       <a href="card-1"><img src="./images/1-million.png"></a>
-    </div>
-    <!-- card 10 -->
-    <div class="div-scroll">
-       <img src="./images/1-million.png">
-    </div>
-    <!-- card 11 -->
-    <div class="div-scroll">
-       <img src="./images/1-million.png">
-    </div>
-    <!-- card 12 -->
-    <div class="div-scroll">
-       <img src="./images/1-million.png">
-    </div>
-  </div>
-</div>
+            </div>
+        </section>
+        <section>
+            <div class="overflow-hidden relative w-full">
+                <div class="flex animate-scroll space-x-4">
+                    <!-- Card 1 -->
+                    <div class="div-scroll">
+                        <a href="#card-4"><img src="./images/1-million.png"></a>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="div-scroll">
+                        <img src="./images/strong-with-you.png">
+                    </div>
+                    <!-- card 3 -->
+                    <div class="div-scroll">
+                        <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted
+                            class="video">
+                    </div>
+                    <!-- card 4 -->
+                    <div class="div-scroll">
+                        <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted class="video">
+                    </div>
+                    <!-- card  5 -->
+                    <div class="div-scroll">
+                        <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted
+                            class="video">
+                    </div>
+                    <!-- card 6 -->
+                    <div class="div-scroll">
+                        <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay
+                            loop muted class="video">
+                    </div>
+                    <!-- card 7 -->
+                    <div class="div-scroll">
+                        <img src="./images/1-million.png">
+                    </div>
+                    <!-- card 8 -->
+                    <div class="div-scroll">
+                        <img src="./images/1-million.png">
+                    </div>
+                    <!-- card 9 -->
+                    <div class="div-scroll">
+                        <a href="card-1"><img src="./images/1-million.png"></a>
+                    </div>
+                    <!-- card 10 -->
+                    <div class="div-scroll">
+                        <img src="./images/1-million.png">
+                    </div>
+                    <!-- card 11 -->
+                    <div class="div-scroll">
+                        <img src="./images/1-million.png">
+                    </div>
+                    <!-- card 12 -->
+                    <div class="div-scroll">
+                        <img src="./images/1-million.png">
+                    </div>
+                </div>
+            </div>
 
-</section>
+        </section>
 
         <!-- section 3 -->
         <section class="section-3">
             <div id="about">
                 <!-- card-1 -->
                 <div class="div-section" id="card-1">
-                    <img src="./images/strong-with-you.png" alt="parfum-1" class="hover:shadow-black ml-[18%] w-[200px] h-[200px]">
+                    <img src="./images/strong-with-you.png" alt="parfum-1"
+                        class="hover:shadow-black ml-[18%] w-[200px] h-[200px]">
                     <div class="text-center items-center">
                         <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
                         <p class="p max-w-[256px] pt-[20px]">Prix <br>950 dh</p>
@@ -222,7 +232,8 @@ footer{
                     </div>
                 </div>
                 <div class="div-section">
-                    <img src="./images/1-million.png" alt="parfum-1" class="bg-transparent ml-[18%] w-[200px] h-[200px]">
+                    <img src="./images/1-million.png" alt="parfum-1"
+                        class="bg-transparent ml-[18%] w-[200px] h-[200px]">
                     <div class="text-center items-center">
                         <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
                         <p class="p max-w-[256px] pt-[20px]">Prix <br>950 dh</p>
@@ -232,7 +243,7 @@ footer{
                         </a>
                     </div>
                 </div>
-               <div class="div-section">
+                <div class="div-section">
                     <img src="./images/strong-with-you.png" alt="parfum-1" class="ml-[18%] w-[200px] h-[200px]">
                     <div class="text-center items-center">
                         <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
@@ -330,7 +341,8 @@ footer{
                             Order Now
                         </a>
                     </div>
-                </div><div class="div-section">
+                </div>
+                <div class="div-section">
                     <img src="./images/strong-with-you.png" alt="parfum-1" class="ml-[18%] w-[200px] h-[200px]">
                     <div class="text-center items-center">
                         <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
@@ -344,25 +356,24 @@ footer{
             </div>
         </section>
     </main>
-   <footer class="footer">
-      <!-- Logo -->
+    <footer class="footer">
+        <!-- Logo -->
         <a href="#" onclick="location.reload()" class="block">
-            <img src="./images/image.png" alt="logo" class="img-logo">
+            <img src="./images/image.png" alt="logo" class="img-social">
         </a>
-
         <!-- Desktop Nav (≥768px) -->
         <div class="div-links">
             <a href="#" class="a">
-                <img src="" alt="facebook">
+                <img src="./images/facebook.png" alt="facebook" class="img-social">
             </a>
             <a href="#" class="a">
-                <img src="" alt="instagrame">
+                <img src="./images/instagramme.png" alt="instagrame" class="img-social">
             </a>
             <a href="#" class="a">
-                <img src="" alt="whatssap">
+                <img src="./images/wtsp.png" alt="whatssap" class="img-social">
             </a>
         </div>
-   </footer>
+    </footer>
 
     <script src="main.js"></script>
 
