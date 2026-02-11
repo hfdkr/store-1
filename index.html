@@ -64,6 +64,9 @@
     .nav{
         @apply hidden md:flex gap-8
     }
+    .nav-phone{
+        @apply hidden flex-col bg-black text-white p-4 md:hidden gap-4
+    }
     .a{
         @apply text-white font-bold uppercase px-3 py-1 rounded hover:text-cyan-400 hover:bg-gray-800 transition
     }
@@ -73,11 +76,14 @@
     .mobile-a{
         @apply font-bold uppercase px-3 py-1 rounded hover:text-cyan-400 hover:bg-gray-800 transition
     }
+    section-1{
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4
+    }
     .div-section{
         @apply inline-block bg-dark-cyan hover:border-4;
     }
     .video{
-        @apply border-3 border-cyan shadow-cyan w-full h-80 object-cover rounded shadow-lg hover:shadow-light-cream border-2 hover:w-full hover:h-90
+        @apply border-3 border-cyan shadow-cyan w-full h-80 object-cover rounded shadow-lg
     }
     .section-3{
         @apply container text-center items-center mx-auto px-4 bg-red-50 my-[124px]
@@ -135,15 +141,15 @@
         </button>
     </header>
     <!-- Mobile Nav (<768px) -->
-    <nav id="mobile-nav" class="hidden flex-col bg-black text-white p-4 md:hidden gap-4">
+    <nav id="mobile-nav" class="nav-phone">
         <a href="#home" class="mobile-a">HOME</a>
         <a href="#about" class="mobile-a">ABOUT</a>
         <a href="#contact" class="mobile-a">CONTACT</a>
-    </nav>`
+    </nav>
     <main>
         <!-- section 1 -->
         <section>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="section-1">
                 <!-- Video 1 -->
                 <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted
                     class="video"></video>
@@ -160,7 +166,7 @@
             </div>
         </section>
         <!-- section 2 -->
-        <section>
+        <section class="mt-[90px]">
             <div class="overflow-hidden relative w-full">
                 <div class="flex animate-scroll space-x-4">
                     <!-- Card 1 -->
