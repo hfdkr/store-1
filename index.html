@@ -1,268 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
-        rel="stylesheet">
-    <title>Store-Parfumme</title>
-    <style type="text/tailwindcss">
-        @theme{
-            /* colors  */
-            --color-dark-cyan: #0E8784;
-            --color-cyan: #66D2CF;
-            --color-dark-blue: #333D4B;
-            --color-pale-orange: #FDD6BA;
-            --color-light-cream: #FEFCF7;
-            --color-grey: #83888F;
-            --color-disabled: #E2DEDB;
-            --color-abled: #2C343E;
-            /* fonts */
-            --font-barlow: "Barlow", sans-serif;
-            --font-fraunces: "Fraunces", serif;
-            /* text-size  */
-            --text-10xl: 150px;
-            --text-10xl-line-height: 72px;
-            --text-7xl: 72px;
-            --text-7xl-line-height: 72px;
-            --text-4xl: 40px;
-            --text-4xl-line-height: 48px;
-            --text-3xl: 32px;
-            --text-3xl-line-height: 36px;
-            --text-2xl: 24px;
-            --text-2xl-line-height: 32px;
-            --text-base: 16px;
-            --text-base-line-height: 26px;
-            --text-xs: 12px;
-            --text-xs-line-height: 15px;
-        } 
-        h1 {
-             @apply font-fraunces font-black text-7xl ; }
-        h2 {
-             @apply font-fraunces font-black text-base max-w-[290px] ; }
-        h3 {
-             @apply font-fraunces font-black text-3xl ; }
-        h4 { 
-            @apply font-fraunces font-black text-2xl ; }
-        .p{
-             @apply font-fraunces text-dark-blue text-[20px];
-        }
-    body{
-        @apply bg-abled text-gray-800 ;
-    }
-    header{
-        @apply flex items-center justify-between p-6 bg-black  ;
-    }
-    .img-logo{
-        @apply w-20 h-20 rounded-full object-cover ring-2 ring-white shadow-md bg-white p-1 cursor-pointer hover:bg-cyan ;
-    }
-    .nav{
-        @apply hidden md:flex gap-8
-    }
-    .nav-phone{
-        @apply hidden flex-col bg-black text-white p-4 md:hidden gap-4
-    }
-    .a{
-        @apply text-white font-bold uppercase px-3 py-1 rounded hover:text-cyan-400 hover:bg-gray-800 transition
-    }
-    button{
-        @apply md:hidden text-white focus:outline-none hover:cursor-pointer
-    }
-    .mobile-a{
-        @apply font-bold uppercase px-3 py-1 rounded hover:text-cyan-400 hover:bg-gray-800 transition
-    }
-    section-1{
-        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4
-    }
-    .div-section{
-        @apply inline-block bg-dark-cyan hover:border-4;
-    }
-    .video{
-        @apply border-3 border-cyan shadow-cyan w-full h-80 object-cover rounded shadow-lg
-    }
-    .section-3{
-        @apply container text-center items-center mx-auto px-4 bg-red-50 my-[124px]
-    }
-    .order-links{
-        @apply inline-block bg-cyan-400 text-black font-bold mt-[20px] px-5 py-2 rounded hover:bg-cyan-500 transition ;
-    }
-    .div-scroll{
-        @apply min-w-[200px] bg-white p-4 rounded shadow hover:border hover:bg-cyan;
-    }
-    @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* adjust -50% depending on number of cards */
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store Parfumme | Luxury Fragrances</title>
 
-  .animate-scroll {
-     animation: scroll 20s linear infinite;
-     }
-   footer{
-    @apply  flex items-center justify-between p-6 bg-black ;
-     }
-   .div-links{
-      @apply flex gap-7
-      }
-    .img-social{
-        @apply w-10 h-10 rounded-full object-cover ring-2  p-1 cursor-pointer hover:bg-cyan ;
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Fraunces:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Barlow", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(247, 200, 115, .18), transparent 30%),
+        radial-gradient(circle at 80% 15%, rgba(102, 210, 207, .12), transparent 28%),
+        #09090b;
+      color: white;
+      overflow-x: hidden;
     }
-    
+    .font-title { font-family: "Fraunces", serif; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee-track { animation: marquee 28s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
   </style>
 </head>
- 
-<body class="body">
 
-    <header id="home" class="header">
-        <!-- Logo -->
-        <a href="#" onclick="location.reload()" class="block">
-            <img src="./images/image.png" alt="logo" class="img-logo">
-        </a>
+<body>
+  <!-- HEADER -->
+  <header id="home" class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between py-4">
+      <a href="#home" class="flex items-center gap-3" onclick="showHome()">
+        <img src="./images/logo-hafid.png" alt="Store Parfumme logo"
+          class="h-14 w-14 rounded-full bg-white object-cover p-1 ring-2 ring-yellow-300">
+        <span class="font-title text-xl font-black tracking-wide">Store Parfumme</span>
+      </a>
 
-        <!-- Desktop Nav (≥768px) -->
-        <nav class="nav">
-            <a href="#home" class="a">HOME</a>
-            <a href="#about" class="a">ABOUT</a>
-            <a href="#" class="a">CONTACT</a>
-        </nav>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300 transition">Home</a>
+        <a href="#collection" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300 transition">Collection</a>
+        <a href="#about" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300 transition">About</a>
+        <a href="#contact" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300 transition">Contact</a>
+      </nav>
 
-        <!-- Mobile menu button -->
-        <button id="mobile-btn" class="button">
-            <!-- Hamburger icon -->
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                </path>
-            </svg>
-        </button>
-    </header>
-    <!-- Mobile Nav (<768px) -->
-    <nav id="mobile-nav" class="nav-phone">
-        <a href="#home" class="mobile-a">HOME</a>
-        <a href="#about" class="mobile-a">ABOUT</a>
-        <a href="#contact" class="mobile-a">CONTACT</a>
+      <a href="#collection" onclick="showHome()"
+        class="hidden md:inline-flex rounded-full bg-white px-5 py-2 text-sm font-extrabold text-black hover:bg-yellow-300 transition">
+        Shop Now
+      </a>
+
+      <button id="mobile-btn" class="md:hidden rounded-full border border-white/15 p-3 text-white">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <nav id="mobile-nav" class="hidden border-t border-white/10 bg-black px-5 py-5 md:hidden">
+      <div class="flex flex-col gap-4">
+        <a href="#home" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300">Home</a>
+        <a href="#collection" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300">Collection</a>
+        <a href="#about" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300">About</a>
+        <a href="#contact" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300">Contact</a>
+      </div>
     </nav>
-    <main>
-        <!-- section 1 -->
-        <section>
-            <div class="section-1">
-                <!-- Video 1 -->
-                <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted
-                    class="video"></video>
-                <!-- Video 2 -->
-                <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted
-                    class="video">
-                    </video>
-                     <!-- Video 3 -->
-                      <video
-                    src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop muted
-                    class="video"></video>
-                <!-- Video 4 -->
-                <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted class="video"></video>
-            </div>
-        </section>
-        <!-- section 2 -->
-        <section class="mt-[90px]">
-            <div class="overflow-hidden relative w-full">
-                <div class="flex animate-scroll space-x-4">
-                    <!-- Card 1 -->
-                    <div class="div-scroll">
-                        <a href="#card-4"><img src="./images/1-million.png"></a>
-                    </div>
-                    <!-- card 2 -->
-                    <div class="div-scroll">
-                        <img src="./images/strong-with-you.png">
-                    </div>
-                    <!-- card 3 -->
-                    <div class="div-scroll">
-                        <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted
-                            class="video">
-                    </div>
-                    <!-- card 4 -->
-                    <div class="div-scroll">
-                        <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted class="video">
-                    </div>
-                    <!-- card  5 -->
-                    <div class="div-scroll">
-                        <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted
-                            class="video">
-                    </div>
-                    <!-- card 6 -->
-                    <div class="div-scroll">
-                        <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay
-                            loop muted class="video">
-                    </div>
-                    <!-- card 7 -->
-                    <div class="div-scroll">
-                        <img src="./images/1-million.png">
-                    </div>
-                    <!-- card 8 -->
-                    <div class="div-scroll">
-                        <img src="./images/1-million.png">
-                    </div>
-                    <!-- card 9 -->
-                    <div class="div-scroll">
-                            <img src="./images/1-million.png">
-                    </div>
-                    <!-- card 10 -->
-                    <div class="div-scroll">
-                        <img src="./images/1-million.png">
-                    </div>
-                    <!-- card 11 -->
-                    <div class="div-scroll">
-                        <img src="./images/1-million.png">
-                    </div>
-                    <!-- card 12 -->
-                    <div class="div-scroll">
-                        <img src="./images/1-million.png">
-                    </div>
-                </div>
-              </div>
-        </section>
-        <!-- section 3 -->
-        <section class="section-3">
-            <div id="about">
-                <!-- card-1 -->
-                <div class="div-section" id="card-1">
-                    <img src="./images/strong-with-you.png" alt="parfum-1"
-                        class="hover:shadow-black ml-[18%] w-[200px] h-[200px]">
-                    <div class="text-center items-center">
-                        <h2 class="h2 pt-[20px]">STRONGER WITH YOU ABSOLUTELY</h2>
-                        <p class="p max-w-[256px] pt-[20px]">Prix :<br>950 dh</p>
-                        <a href="#" class="order-links">
-                            Order Now
-                        </a>
-                    </div>
+  </header>
 
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <!-- Logo -->
-        <a href="#" onclick="location.reload()" class="block">
-            <img src="./images/image.png" alt="logo" class="img-social">
-        </a>
-        <!-- Desktop Nav (≥768px) -->
-        <div class="div-links">
-            <a href="#" class="a">
-                <img src="./images/facebook.png" alt="facebook" class="img-social">
-            </a>
-            <a href="#" class="a">
-                <img src="./images/instagramme.png" alt="instagrame" class="img-social">
-            </a>
-            <a href="#" class="a">
-                <img src="./images/wtsp.png" alt="whatssap" class="img-social">
-            </a>
+  <!-- HOME PAGE -->
+  <main id="home-page">
+    <!-- HERO -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 grid min-h-[88vh] items-center gap-12 py-16 lg:grid-cols-[1fr_1.05fr]">
+      <div>
+        <p class="mb-5 inline-flex rounded-full border border-yellow-300/30 bg-yellow-300/10 px-4 py-2 text-sm font-bold uppercase tracking-[.25em] text-yellow-300">
+          Premium fragrance store
+        </p>
+
+        <h1 class="font-title text-5xl sm:text-6xl md:text-7xl font-black leading-[.95]">
+          Luxury perfume, made unforgettable.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-8 text-gray-300">
+          Discover cinematic fragrance drops, elegant bottles, and standout scents selected for daily wear, gifts, and special nights.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a href="#collection"
+            class="inline-flex items-center justify-center rounded-full bg-yellow-300 px-7 py-3 font-extrabold text-black shadow-lg hover:-translate-y-1 hover:bg-white transition">
+            Explore Collection
+          </a>
+
+          <a href="#contact"
+            class="inline-flex items-center text-center justify-center rounded-full border border-white/20 px-7 py-3 font-bold text-white hover:bg-white hover:text-black transition">
+             &nbsp; &nbsp;&nbsp; Order Now &nbsp;&nbsp;&nbsp;&nbsp;
+          </a>
         </div>
-    </footer>
+      </div>
 
-    <script src="main.js"></script>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="relative overflow-hidden rounded-[2rem] border border-white/15 bg-zinc-900 shadow-2xl h-[420px] sm:col-span-2">
+          <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted playsinline
+            class="h-full w-full object-cover"></video>
 
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+          <div class="absolute bottom-6 left-6 right-6">
+            <p class="text-sm font-bold uppercase tracking-[.25em] text-yellow-300">Featured</p>
+            <h2 class="mt-2 font-title text-3xl font-black">Monac 3D Perfume</h2>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-[2rem] border border-white/15 bg-zinc-900 shadow-2xl h-56">
+          <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted playsinline
+            class="h-full w-full object-cover"></video>
+        </div>
+
+        <div class="relative overflow-hidden rounded-[2rem] border border-white/15 bg-zinc-900 shadow-2xl h-56">
+          <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted playsinline
+            class="h-full w-full object-cover"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOVING PRODUCTS -->
+    <section class="py-10">
+      <div class="marquee overflow-hidden border-y border-white/10 bg-white/[.04] py-5">
+        <div class="marquee-track flex w-max gap-5 px-5">
+          <button onclick="showProduct('million')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="./images/1-million.png" alt="1 Million perfume" class="h-full w-full object-contain">
+          </button>
+
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="./images/strong-with-you.png" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+
+          <div class="h-36 w-56 shrink-0 overflow-hidden rounded-3xl">
+            <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted playsinline
+              class="h-full w-full object-cover"></video>
+          </div>
+
+          <div class="h-36 w-56 shrink-0 overflow-hidden rounded-3xl">
+            <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop muted playsinline
+              class="h-full w-full object-cover"></video>
+          </div>
+
+          <button onclick="showProduct('million')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="./images/1-million.png" alt="1 Million perfume" class="h-full w-full object-contain">
+          </button>
+
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="./images/strong-with-you.png" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+
+          <button onclick="showProduct('million')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="./images/1-million.png" alt="1 Million perfume" class="h-full w-full object-contain">
+          </button>
+
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="./images/strong-with-you.png" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection" class="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+      <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <p class="mb-3 text-sm font-bold uppercase tracking-[.3em] text-yellow-300">Our collection</p>
+          <h2 class="font-title text-4xl sm:text-5xl md:text-6xl font-black leading-tight">Best sellers</h2>
+        </div>
+
+        <p class="max-w-md text-gray-300">
+          Click Order to open a professional product page like your example.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Product 1 -->
+        <article class="rounded-[2rem] p-5 bg-white/10 backdrop-blur-xl border border-white/15 shadow-2xl hover:-translate-y-2 hover:border-yellow-300/60 transition duration-300">
+          <div class="mb-5 rounded-[1.5rem] bg-white p-6">
+            <img src="./images/strong-with-you.png" alt="Stronger With You Absolutely perfume"
+              class="mx-auto h-64 object-contain">
+          </div>
+
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-yellow-300">Armani style</p>
+          <h3 class="mt-2 font-title text-2xl font-black">Stronger With You Absolutely</h3>
+          <p class="mt-3 text-gray-300">Warm, intense, elegant, and perfect for evening wear.</p>
+
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <span class="text-3xl font-black">950 dh</span>
+            <button onclick="showProduct('stronger')"
+              class="inline-flex items-center justify-center rounded-full bg-yellow-300 px-5 py-2 font-extrabold text-black hover:bg-white transition">
+              Order
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="rounded-[2rem] p-5 bg-white/10 backdrop-blur-xl border border-white/15 shadow-2xl hover:-translate-y-2 hover:border-yellow-300/60 transition duration-300">
+          <div class="mb-5 rounded-[1.5rem] bg-white p-6">
+            <img src="./images/1-million.png" alt="1 Million perfume"
+              class="mx-auto h-64 object-contain">
+          </div>
+
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-yellow-300">Bold classic</p>
+          <h3 class="mt-2 font-title text-2xl font-black">1 Million</h3>
+          <p class="mt-3 text-gray-300">Confident, sweet, spicy, and built to get noticed.</p>
+
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <span class="text-3xl font-black">590 dh</span>
+            <button onclick="showProduct('million')"
+              class="inline-flex items-center justify-center rounded-full bg-yellow-300 px-5 py-2 font-extrabold text-black hover:bg-white transition">
+              Order
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="rounded-[2rem] p-5 bg-white/10 backdrop-blur-xl border border-white/15 shadow-2xl hover:-translate-y-2 hover:border-yellow-300/60 transition duration-300">
+          <div class="mb-5 h-76 overflow-hidden rounded-[1.5rem] bg-white">
+            <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted playsinline
+              class="h-full w-full object-cover"></video>
+          </div>
+
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-yellow-300">Fresh luxury</p>
+          <h3 class="mt-2 font-title text-2xl font-black">Bleu de Chanel</h3>
+          <p class="mt-3 text-gray-300">Fresh, clean, sophisticated, and timeless.</p>
+
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <span class="text-3xl font-black">Ask price</span>
+            <button onclick="showProduct('bleu')"
+              class="inline-flex items-center justify-center rounded-full bg-yellow-300 px-5 py-2 font-extrabold text-black hover:bg-white transition">
+              Order
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+      <div class="grid gap-10 rounded-[2.5rem] p-8 md:grid-cols-3 md:p-12 bg-white/10 backdrop-blur-xl border border-white/15 shadow-2xl">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.3em] text-yellow-300">Why choose us</p>
+          <h2 class="mt-3 font-title text-4xl font-black">A better shopping experience.</h2>
+        </div>
+
+        <div class="md:col-span-2 grid gap-5 sm:grid-cols-3">
+          <div class="rounded-3xl bg-white/10 p-5">
+            <strong class="text-2xl text-yellow-300">01</strong>
+            <p class="mt-3 font-bold">Premium product visuals</p>
+          </div>
+
+          <div class="rounded-3xl bg-white/10 p-5">
+            <strong class="text-2xl text-yellow-300">02</strong>
+            <p class="mt-3 font-bold">Mobile-first design</p>
+          </div>
+
+          <div class="rounded-3xl bg-white/10 p-5">
+            <strong class="text-2xl text-yellow-300">03</strong>
+            <p class="mt-3 font-bold">Fast WhatsApp orders</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PRODUCT DETAIL PAGE -->
+  <main id="product-page" class="hidden bg-white text-black min-h-screen">
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 py-10">
+      <button onclick="showHome()" class="mb-8 inline-flex items-center gap-2 rounded-full border border-black/15 px-5 py-2 font-bold hover:bg-black hover:text-white transition">
+        ← Back to store
+      </button>
+
+      <div class="grid gap-10 lg:grid-cols-[1.15fr_.85fr]">
+        <!-- Product images -->
+        <div class="grid gap-6 md:grid-cols-[90px_1fr]">
+          <div id="thumbs" class="order-2 md:order-1 flex md:flex-col gap-4 overflow-x-auto md:overflow-visible"></div>
+
+          <div class="order-1 md:order-2 relative bg-neutral-100 border border-black/10 overflow-hidden">
+            <div class="absolute left-6 top-6 z-10 h-24 w-24 rounded-full bg-yellow-400 text-black flex flex-col items-center justify-center text-center font-black shadow-xl">
+              <span class="text-xs">BEST</span>
+              <span class="text-xs">SELLER</span>
+            </div>
+
+            <img id="main-product-img" src="./images/strong-with-you.png" alt="Product image" class="w-full h-[520px] object-contain p-8">
+          </div>
+        </div>
+
+        <!-- Product info -->
+        <div>
+          <div class="mb-5 flex items-center gap-3 text-xs uppercase tracking-[.25em] text-neutral-500">
+            <span>Share</span>
+            <span>f</span>
+            <span>x</span>
+            <span>p</span>
+            <span>✉</span>
+          </div>
+
+          <div class="mb-5 flex items-center gap-2 text-yellow-700">
+            <span class="text-2xl">★★★★★</span>
+            <span class="text-sm font-bold text-black">(3)</span>
+          </div>
+
+          <h1 id="detail-title" class="text-3xl md:text-4xl uppercase tracking-[.22em] leading-snug">
+            VOLZAK PARFUM BOIS NOBLE 100ml HOMME
+          </h1>
+
+          <p id="detail-price" class="mt-5 text-xl tracking-[.25em] text-neutral-500">Dh 590.00 MAD</p>
+
+          <div class="my-14 flex flex-col items-center">
+            <div class="flex gap-1">
+              <span class="h-1.5 w-16 bg-blue-700"></span>
+              <span class="h-1.5 w-16 bg-white border border-neutral-200"></span>
+              <span class="h-1.5 w-16 bg-red-600"></span>
+            </div>
+            <p class="mt-3 text-xs font-bold uppercase tracking-[.4em]">Made in France</p>
+          </div>
+
+          <div id="small-gallery" class="mb-8 flex items-center gap-3 overflow-x-auto"></div>
+
+          <div class="border-t border-neutral-200 pt-8">
+            <button
+              onclick="openWhatsapp()"
+              class="w-full bg-black text-white py-4 font-bold tracking-[.15em] hover:bg-yellow-600 transition">
+              Add to cart
+            </button>
+
+            <button
+              onclick="openWhatsapp()"
+              class="mt-4 w-full bg-black text-white py-4 font-bold hover:bg-neutral-800 transition">
+              Buy now
+            </button>
+
+            <a id="whatsapp-button" href="#" target="_blank"
+              class="mt-10 flex items-center justify-center gap-4 rounded-xl border border-yellow-700/25 bg-[#eee6dc] py-6 font-bold text-yellow-800 hover:bg-yellow-100 transition">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-xl text-white">☘</span>
+              Commander Sur WhatsApp
+            </a>
+
+            <p class="mt-3 text-center text-sm text-neutral-500">⏱ Nous vous répondrons sous peu</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pyramid description -->
+      <div class="mt-16 max-w-3xl">
+        <h2 class="text-2xl uppercase tracking-[.25em]">La Pyramide Olfactive</h2>
+
+        <ul id="detail-notes" class="mt-6 space-y-4 text-base leading-8"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="border-t border-white/10 bg-black py-10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col justify-between gap-8 md:flex-row md:items-center">
+      <div class="flex items-center gap-3">
+        <img src="./images/logo-hafid.png" alt="Store Parfumme logo"
+          class="h-12 w-12 rounded-full bg-white object-cover p-1">
+
+        <div>
+          <p class="font-title text-xl font-black">Store Parfumme</p>
+          <p class="text-sm text-gray-400">Luxury fragrance store</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#" class="rounded-full bg-white/10 p-3 hover:bg-yellow-300 transition">
+          <img src="./images/facebook.png" alt="Facebook" class="h-6 w-6">
+        </a>
+
+        <a href="#" class="rounded-full bg-white/10 p-3 hover:bg-yellow-300 transition">
+          <img src="./images/instagramme.png" alt="Instagram" class="h-6 w-6">
+        </a>
+
+        <a href="https://wa.me/212600000000" class="rounded-full bg-white/10 p-3 hover:bg-yellow-300 transition">
+          <img src="./images/wtsp.png" alt="WhatsApp" class="h-6 w-6">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const WHATSAPP_NUMBER = "212600000000"; // Change this to your real WhatsApp number.
+
+    const products = {
+      stronger: {
+        title: "STRONGER WITH YOU ABSOLUTELY 100ml HOMME",
+        price: "Dh 950.00 MAD",
+        image: "./images/strong-with-you.png",
+        gallery: [
+          "./images/strong-with-you.png",
+          "./images/1-million.png",
+          "./images/strong-with-you.png",
+          "./images/1-million.png",
+          "./images/strong-with-you.png"
+        ],
+        notes: [
+          "<strong>Genre :</strong> Homme",
+          "<strong>Famille Principale :</strong> Oriental",
+          "<strong>Sous-famille :</strong> Épicé / Ambré",
+          "<strong>Caractère :</strong> Intense, chaleureux, élégant.",
+          "<strong>Notes de Tête :</strong> Rhum, Bergamote, Élémi.",
+          "<strong>Notes de Cœur :</strong> Lavande, Davana.",
+          "<strong>Notes de Fond :</strong> Vanille, Châtaigne, Cèdre."
+        ]
+      },
+
+      million: {
+        title: "1 MILLION PARFUM 100ml HOMME",
+        price: "Dh 590.00 MAD",
+        image: "./images/1-million.png",
+        gallery: [
+          "./images/1-million.png",
+          "./images/strong-with-you.png",
+          "./images/1-million.png",
+          "./images/strong-with-you.png",
+          "./images/1-million.png"
+        ],
+        notes: [
+          "<strong>Genre :</strong> Homme",
+          "<strong>Famille Principale :</strong> Boisé / Épicé",
+          "<strong>Sous-famille :</strong> Cuiré / Ambré",
+          "<strong>Caractère :</strong> Audacieux, riche, moderne.",
+          "<strong>Notes de Tête :</strong> Mandarine, Menthe, Pamplemousse.",
+          "<strong>Notes de Cœur :</strong> Rose, Cannelle, Épices.",
+          "<strong>Notes de Fond :</strong> Cuir, Ambre, Bois blancs."
+        ]
+      },
+
+      bleu: {
+        title: "BLEU DE CHANEL 100ml HOMME",
+        price: "Dh Ask price",
+        image: "./images/1-million.png",
+        gallery: [
+          "./images/1-million.png",
+          "./images/strong-with-you.png",
+          "./images/1-million.png",
+          "./images/strong-with-you.png",
+          "./images/1-million.png"
+        ],
+        notes: [
+          "<strong>Genre :</strong> Homme",
+          "<strong>Famille Principale :</strong> Aromatique / Boisé",
+          "<strong>Sous-famille :</strong> Frais / Élégant",
+          "<strong>Caractère :</strong> Propre, frais, sophistiqué.",
+          "<strong>Notes de Tête :</strong> Agrumes, Menthe, Poivre rose.",
+          "<strong>Notes de Cœur :</strong> Gingembre, Jasmin, Noix de muscade.",
+          "<strong>Notes de Fond :</strong> Encens, Cèdre, Santal."
+        ]
+      }
+    };
+
+    let currentProduct = products.stronger;
+
+    const mobileBtn = document.getElementById("mobile-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    mobileBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll("#mobile-nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.add("hidden");
+      });
+    });
+
+    function showHome() {
+      document.getElementById("home-page").classList.remove("hidden");
+      document.getElementById("product-page").classList.add("hidden");
+      document.body.classList.remove("bg-white");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showProduct(productKey) {
+      currentProduct = products[productKey];
+
+      document.getElementById("home-page").classList.add("hidden");
+      document.getElementById("product-page").classList.remove("hidden");
+
+      document.getElementById("detail-title").textContent = currentProduct.title;
+      document.getElementById("detail-price").textContent = currentProduct.price;
+      document.getElementById("main-product-img").src = currentProduct.image;
+
+      const thumbs = document.getElementById("thumbs");
+      const smallGallery = document.getElementById("small-gallery");
+      const notes = document.getElementById("detail-notes");
+
+      thumbs.innerHTML = "";
+      smallGallery.innerHTML = "";
+      notes.innerHTML = "";
+
+      currentProduct.gallery.forEach((src) => {
+        const thumbBtn = document.createElement("button");
+        thumbBtn.className = "h-20 w-20 shrink-0 border border-black/20 bg-neutral-100 p-2 hover:border-black transition";
+        thumbBtn.innerHTML = `<img src="${src}" alt="Product thumbnail" class="h-full w-full object-contain">`;
+        thumbBtn.onclick = () => {
+          document.getElementById("main-product-img").src = src;
+        };
+        thumbs.appendChild(thumbBtn);
+
+        const smallBtn = document.createElement("button");
+        smallBtn.className = "h-16 w-16 shrink-0 rounded-xl border-2 border-black bg-neutral-100 p-2 hover:border-yellow-700 transition";
+        smallBtn.innerHTML = `<img src="${src}" alt="Small product thumbnail" class="h-full w-full object-contain">`;
+        smallBtn.onclick = () => {
+          document.getElementById("main-product-img").src = src;
+        };
+        smallGallery.appendChild(smallBtn);
+      });
+
+      currentProduct.notes.forEach((note) => {
+        const li = document.createElement("li");
+        li.innerHTML = "◆ " + note;
+        notes.appendChild(li);
+      });
+
+      const text = encodeURIComponent("Hello, I want to order: " + currentProduct.title + " - " + currentProduct.price);
+      document.getElementById("whatsapp-button").href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openWhatsapp() {
+      const text = encodeURIComponent("Hello, I want to order: " + currentProduct.title + " - " + currentProduct.price);
+      window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text, "_blank");
+    }
+  </script>
 </body>
-
 </html>
