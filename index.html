@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Store Parfumme | Luxury Fragrances</title>
 
+  <title>Hafid Parfum | Luxury Fragrances</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Fraunces:wght@700;800;900&display=swap"
     rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
+  <style type="text/tailwindcss">
+     @theme{
+    --color-Blue-500: #306AFF;
+    --color-Blue-950: #2D3949;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Barlow", sans-serif;
       background:
@@ -24,27 +34,54 @@
       color: white;
       overflow-x: hidden;
     }
-    .font-title { font-family: "Fraunces", serif; }
+
+    .font-title {
+      font-family: "Fraunces", serif;
+    }
 
     @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
-    .marquee-track { animation: marquee 28s linear infinite; }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
+
+    .marquee-track {
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 
 <body>
+  <div class="bg-Blue-950 py-[20px]">
+    <span class="flex justify-center">Cree ton compte &nbsp; <a href="/main.html" class="text-Blue-500 underline">Now ....</a></span>
+
+  </div>
   <!-- HEADER -->
   <header id="home" class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between py-4">
+
+      <!-- LOGO -->
       <a href="#home" class="flex items-center gap-3" onclick="showHome()">
-        <img src="./images/logo-hafid.png" alt="Store Parfumme logo"
-          class="h-14 w-14 rounded-full bg-white object-cover p-1 ring-2 ring-yellow-300">
-        <span class="font-title text-xl font-black tracking-wide">Store Parfumme</span>
+        <img
+          src="./images/logo-hafid.png"
+          alt="Hafid Parfum logo"
+          class="h-14 w-14 rounded-full bg-black object-cover p-1 ring-2 ring-yellow-300 shadow-lg hover:scale-110 transition"
+        >
+
+        <span class="font-title text-xl font-black tracking-wide">
+          Hafid Parfum
+        </span>
       </a>
 
+      <!-- DESKTOP NAV -->
       <nav class="hidden md:flex items-center gap-8">
         <a href="#home" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300 transition">Home</a>
         <a href="#collection" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300 transition">Collection</a>
@@ -57,7 +94,8 @@
         Shop Now
       </a>
 
-      <button id="mobile-btn" class="md:hidden rounded-full border border-white/15 p-3 text-white">
+      <!-- MOBILE BUTTON -->
+      <button id="mobile-btn" class="md:hidden rounded-full border border-white/15 p-3 text-white" aria-label="Open menu">
         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
@@ -65,6 +103,7 @@
       </button>
     </div>
 
+    <!-- MOBILE NAV -->
     <nav id="mobile-nav" class="hidden border-t border-white/10 bg-black px-5 py-5 md:hidden">
       <div class="flex flex-col gap-4">
         <a href="#home" onclick="showHome()" class="text-sm font-bold uppercase tracking-[.22em] text-white/75 hover:text-yellow-300">Home</a>
@@ -98,9 +137,9 @@
             Explore Collection
           </a>
 
-          <a href="#contact"
-            class="inline-flex items-center text-center justify-center rounded-full border border-white/20 px-7 py-3 font-bold text-white hover:bg-white hover:text-black transition">
-             &nbsp; &nbsp;&nbsp; Order Now &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#collection"
+            class="inline-flex items-center justify-center rounded-full border border-white/20 px-[40px] py-3 font-bold text-white hover:bg-white hover:text-black transition">
+            Order Now
           </a>
         </div>
       </div>
@@ -114,7 +153,7 @@
 
           <div class="absolute bottom-6 left-6 right-6">
             <p class="text-sm font-bold uppercase tracking-[.25em] text-yellow-300">Featured</p>
-            <h2 class="mt-2 font-title text-3xl font-black">Monac 3D Perfume</h2>
+            <h2 class="mt-2 font-title text-3xl font-black">Hafid Parfum Collection</h2>
           </div>
         </div>
 
@@ -135,12 +174,12 @@
       <div class="marquee overflow-hidden border-y border-white/10 bg-white/[.04] py-5">
         <div class="marquee-track flex w-max gap-5 px-5">
           <button onclick="showProduct('million')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
-            <img src="./images/1-million.png" alt="1 Million perfume" class="h-full w-full object-contain">
+            <img src="" alt="1 Million perfume" class="h-full w-full object-contain">
           </button>
-
-          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
-            <img src="./images/strong-with-you.png" alt="Stronger With You perfume" class="h-full w-full object-contain">
-          </button>
+          <div class="h-36 w-56 shrink-0 overflow-hidden rounded-3xl">
+            <video src="./images/BLEU DE CHANEL – CHANEL Fragrance.mp4" autoplay loop muted playsinline
+              class="h-full w-full object-cover"></video>
+          </div>
 
           <div class="h-36 w-56 shrink-0 overflow-hidden rounded-3xl">
             <video src="./images/Black Gold Perfume - 3D Motion Design Animation.mp4" autoplay loop muted playsinline
@@ -151,21 +190,53 @@
             <video src="./images/Stronger with You Intensely — 3D Product Animation 3D Perfume.mp4" autoplay loop muted playsinline
               class="h-full w-full object-cover"></video>
           </div>
+          <div class="h-36 w-56 shrink-0 overflow-hidden rounded-3xl">
+            <video src="./images/Monac 3D product animation 3D perfume.mp4" autoplay loop muted playsinline
+              class="h-full w-full object-cover"></video>
+          </div>
 
-          <button onclick="showProduct('million')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
-            <img src="./images/1-million.png" alt="1 Million perfume" class="h-full w-full object-contain">
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
           </button>
 
           <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
-            <img src="./images/strong-with-you.png" alt="Stronger With You perfume" class="h-full w-full object-contain">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
           </button>
-
-          <button onclick="showProduct('million')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
-            <img src="./images/1-million.png" alt="1 Million perfume" class="h-full w-full object-contain">
-          </button>
-
+          
           <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
-            <img src="./images/strong-with-you.png" alt="Stronger With You perfume" class="h-full w-full object-contain">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
+          </button>
+          
+          <button onclick="showProduct('stronger')" class="h-36 w-44 shrink-0 rounded-3xl bg-white p-4">
+            <img src="" alt="Stronger With You perfume" class="h-full w-full object-contain">
           </button>
         </div>
       </div>
@@ -180,7 +251,7 @@
         </div>
 
         <p class="max-w-md text-gray-300">
-          Click Order to open a professional product page like your example.
+          Click Order to open a professional product page.
         </p>
       </div>
 
@@ -313,7 +384,7 @@
           </div>
 
           <h1 id="detail-title" class="text-3xl md:text-4xl uppercase tracking-[.22em] leading-snug">
-            VOLZAK PARFUM BOIS NOBLE 100ml HOMME
+            HAFID PARFUM 100ml HOMME
           </h1>
 
           <p id="detail-price" class="mt-5 text-xl tracking-[.25em] text-neutral-500">Dh 590.00 MAD</p>
@@ -344,7 +415,7 @@
 
             <a id="whatsapp-button" href="#" target="_blank"
               class="mt-10 flex items-center justify-center gap-4 rounded-xl border border-yellow-700/25 bg-[#eee6dc] py-6 font-bold text-yellow-800 hover:bg-yellow-100 transition">
-              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-xl text-white">☘</span>
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-xl text-white">☎</span>
               Commander Sur WhatsApp
             </a>
 
@@ -366,11 +437,14 @@
   <footer id="contact" class="border-t border-white/10 bg-black py-10">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col justify-between gap-8 md:flex-row md:items-center">
       <div class="flex items-center gap-3">
-        <img src="./images/logo-hafid.png" alt="Store Parfumme logo"
-          class="h-12 w-12 rounded-full bg-white object-cover p-1">
+        <img
+          src="./images/logo-hafid.png"
+          alt="Hafid Parfum logo"
+          class="h-12 w-12 rounded-full bg-black object-cover p-1 ring-2 ring-yellow-300"
+        >
 
         <div>
-          <p class="font-title text-xl font-black">Store Parfumme</p>
+          <p class="font-title text-xl font-black">Hafid Parfum</p>
           <p class="text-sm text-gray-400">Luxury fragrance store</p>
         </div>
       </div>
@@ -400,11 +474,11 @@
         price: "Dh 950.00 MAD",
         image: "./images/strong-with-you.png",
         gallery: [
+          "./images/strong-2jpg.jpg",
+          "./images/strong-3.webp",
           "./images/strong-with-you.png",
-          "./images/1-million.png",
-          "./images/strong-with-you.png",
-          "./images/1-million.png",
-          "./images/strong-with-you.png"
+          "./images/stronge-4.webp",
+          ""
         ],
         notes: [
           "<strong>Genre :</strong> Homme",
@@ -480,7 +554,6 @@
     function showHome() {
       document.getElementById("home-page").classList.remove("hidden");
       document.getElementById("product-page").classList.add("hidden");
-      document.body.classList.remove("bg-white");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
