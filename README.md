@@ -21,3 +21,27 @@ main.js         → JavaScript logic
 
 ---
 
+
+##  Features
+
+-  Display perfume products with images  
+-  Simple navigation between pages  
+-  Interactive elements using JavaScript  
+-  Responsive design (depending on CSS)  
+-  Clean and organized project structure  
+
+---
+
+##  How to Run This Project
+
+1. Clone the repository:
+   git clone https://github.com/your-username/your-repo-name.git
+
+2. Go to the project folder:
+   cd your-repo-name
+
+3. Open index.html in your browser.
+
+---
+
+
