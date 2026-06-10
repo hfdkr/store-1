@@ -45,3 +45,36 @@ main.js         → JavaScript logic
 ---
 
 
+##  Technologies Used
+
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla JS)
+
+---
+
+##  Future Improvements
+
+- 🛒 Add shopping cart system  
+- 🔐 Login / Signup system  
+- 🎨 Improve UI/UX design  
+- 💾 Add backend database (Node.js / Firebase)  
+- 💳 Add payment system  
+
+---
+
+## 👨‍💻 Author
+
+Hafid Karkouch  
+Student in Applied Chemistry & Physics  
+Learning Web Development & Programming  
+
+---
+
+## 📌 Note
+
+This project is created for learning purposes and improving front-end development skills.
+
+---
+
+⭐ If you like this project, don't forget to star it on GitHub!
