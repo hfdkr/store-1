@@ -15,7 +15,7 @@ A simple and elegant web project for an online perfume store built using HTML, C
 .vscode/        → VS Code settings  
 images/         → Perfume product images  
 index.html      → Main homepage  
-main.html       → Products / details page  
+main.html       → Login Page  
 style.css       → Styling file (if exists)  
 main.js         → JavaScript logic  
 
