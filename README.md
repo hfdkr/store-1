@@ -16,7 +16,7 @@ A simple and elegant web project for an online perfume store built using HTML, C
 images/         → Perfume product images  
 index.html      → Main homepage  
 main.html       → Login Page  
-style.css       → Styling file (if exists)  
+style.css       → Styling Page 
 main.js         → JavaScript logic  
 
 ---
@@ -35,10 +35,10 @@ main.js         → JavaScript logic
 ##  How to Run This Project
 
 1. Clone the repository:
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/hfdkr/store-1.git
 
 2. Go to the project folder:
-   cd your-repo-name
+   cd store-1
 
 3. Open index.html in your browser.
 
@@ -66,7 +66,7 @@ main.js         → JavaScript logic
 ## 👨‍💻 Author
 
 Hafid Karkouch  
-Student in Applied Chemistry & Physics  
+Student in Ecole Ewa
 Learning Web Development & Programming  
 
 ---
