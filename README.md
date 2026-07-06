@@ -40,7 +40,10 @@ main.js         → JavaScript logic
 2. Go to the project folder:
    cd store-1
 
-3. Open index.html in your browser.
+3. Go to the project folder:
+   code .
+
+4. Open index.html in your browser.
 
 ---
 
@@ -65,7 +68,7 @@ main.js         → JavaScript logic
 
 ## 👨‍💻 Author
 
-Hafid Karkouch  
+Hafid 
 Student in Ecole Ewa
 Learning Web Development & Programming  
 
